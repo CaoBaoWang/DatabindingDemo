@@ -6,10 +6,12 @@ import androidx.databinding.ViewDataBinding;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 
 import com.example.a02databinding.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+    private User user;
 
 
 //    https://developer.android.com/topic/libraries/data-binding/expressions
@@ -42,13 +44,17 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainer,fragment,"blank").commit();
 
 
-
-
-        User user =  new User("wsl",18,15711111111L);
+        user = new User("wsl",18,15711111111L);
         binding.setUser(user);
         user.age = 22;
+        user.loginName.set("admin");
 
 
 
+    }
+    public void login(View view){
+        user.setAge(4444) ;
+        user.setName("wsl4444");
+        user.loginName.set("admin444444");
     }
 }

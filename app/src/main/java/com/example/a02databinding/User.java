@@ -1,10 +1,30 @@
 package com.example.a02databinding;
 
-public class User {
+import android.util.Log;
+import android.view.View;
+
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+import androidx.databinding.ObservableField;
+import androidx.databinding.library.baseAdapters.BR;
+
+import java.util.Observable;
+
+public class User  extends BaseObservable {
     String name ;
     public int age ;
     long phone;
+    public final ObservableField<String> loginName = new ObservableField<>();
 //    String avatar;
+
+    public  void onClickLogin(View view){
+
+        setAge(33) ;
+        setName("wsl333");
+        loginName.set("admin33333");
+        Log.d("ssssssssssssssssss"," loginname ="+loginName.get()+"age= "+age);
+    }
+
 
 
 
@@ -25,12 +45,14 @@ public class User {
         this.name = name;
     }
 
+    @Bindable
     public String getAge() {
         return age+"";
     }
 
     public void setAge(int age) {
         this.age = age;
+        notifyPropertyChanged(BR.age);
     }
 
     public String getPhone() {
