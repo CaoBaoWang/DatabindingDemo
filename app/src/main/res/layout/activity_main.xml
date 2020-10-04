@@ -79,6 +79,13 @@
             android:onClick="login"
             android:text="可观察字段演示"
             android:layout_height="50dp"/>
+        <Button
+            android:id="@+id/viewModelBtn"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/phone"
+            android:layout_marginTop="200dp"
+            android:text="viewmodel livedata lifecycle"
+            android:layout_height="50dp"/>
 
 
 

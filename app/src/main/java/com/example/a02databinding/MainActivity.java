@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
         user.age = 22;
         user.loginName.set("admin");
 
+        final Intent intent = new Intent(this,ViewModelActivity.class);
+        binding.viewModelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+
+            }
+        });
 
 
     }
