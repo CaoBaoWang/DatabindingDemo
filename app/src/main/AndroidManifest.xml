@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ConvertDataBingdingLayoutActivity"></activity>
+        <activity android:name=".LifecycleActivity"></activity>
+        <activity android:name=".ConvertDataBingdingLayoutActivity" />
         <activity android:name=".ViewModelActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

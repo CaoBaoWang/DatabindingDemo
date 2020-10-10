@@ -47,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         user = new User("wsl",18,15711111111L);
         binding.setUser(user);
-        user.age = 22;
-        user.loginName.set("admin");
+
 
         final Intent intent = new Intent(this,ViewModelActivity.class);
         binding.viewModelBtn.setOnClickListener(new View.OnClickListener() {
@@ -58,9 +57,19 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        binding.lifecycleBtn.setOnClickListener(this::onClick);
 
 
     }
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.lifecycleBtn:
+                startActivity(new Intent(MainActivity.this,LifecycleActivity.class));
+                break;
+        }
+
+    }
+
     public void login(View view){
         user.setAge(4444) ;
         user.setName("wsl4444");

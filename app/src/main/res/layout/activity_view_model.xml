@@ -11,31 +11,85 @@
 
 
     </data>
-    
-    
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ViewModelActivity">
 
-        <TextView
-            android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            tools:context=".ViewModelActivity">
+
+            <TextView
+                android:layout_width="wrap_content"
 
 
-            android:layout_height="wrap_content"
-            android:text="@{String.valueOf(viewModel.number)}"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(viewModel.number)}"
+                android:textSize="16sp"
+                />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:text="addNumber"
-            android:onClick="@{viewModel::addNumber}"
-            android:layout_height="wrap_content"
-            />
+            <Button
+                android:layout_width="wrap_content"
+                android:text="addNumber"
+                android:onClick="@{viewModel::addNumber}"
+                android:layout_height="wrap_content"
+                />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>    
+
+            <TextView
+                android:text="@{viewModel.searchContent}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:text="@={viewModel.searchContent}"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+
+            <TextView
+                android:text="@{String.valueOf(viewModel.isChecked)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <CheckBox
+                android:checked="@={viewModel.isChecked}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/spinner"
+                android:entries="@array/planets_array"
+                tools:listitem="@layout/spinner_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <Spinner
+                android:id="@+id/spinnerRes"
+                android:layout_width="wrap_content"
+                android:entries="@array/planets_array"
+
+                tools:listitem="@layout/spinner_item"
+
+                android:layout_height="wrap_content"/>
+
+            <CalendarView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
 </layout>
