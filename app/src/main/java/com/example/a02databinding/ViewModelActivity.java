@@ -12,7 +12,6 @@ import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
 import com.example.a02databinding.databinding.ActivityViewModelBinding;
-import com.example.a02databinding.spinner.Person;
 
 public class ViewModelActivity extends AppCompatActivity {
 
